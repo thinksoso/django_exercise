@@ -1,0 +1,41 @@
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    </head>
+    <body>
+        <h1>图书管理系统</h1>
+        <h2>图书列表</h2>
+        <div>
+            {% if book_infos %}
+            <table class="layui-table">
+                    <colgroup>
+                      <col width="150">
+                      <col width="200">
+                      <col>
+                    </colgroup>
+                    <thead>
+                            <tr>
+                              <th>书名</th>
+                              <th>作者</th>
+                              <th>数量</th>
+                            </tr> 
+                    </thead>
+            {% for book_info in book_infos %}
+            <tr>
+                    <td>{{book_info.name}}</td>
+                    <td>{{book_info.author}}</td>
+                    <td>{{book_info.amount}}</td>
+                    <td><a href='/change?name={{book_info.name}}'>修改</a></td>
+                    <td><a href='/delete?name={{book_info.name}}'>删除</a></td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            还没有图书
+            {% endif %}
+
+            <br>
+            <a href="/add">新增图书</a>
+    
+    </body>
+
+</html>

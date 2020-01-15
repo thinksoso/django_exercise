@@ -1,0 +1,15 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>请输入图书信息</h1>
+    <form action="/add" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" value="请输入书名">
+        <input type="text" name="author" value="作者">
+        <input type="text" name="amount" value="数量">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

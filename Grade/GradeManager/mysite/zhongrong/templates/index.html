@@ -1,0 +1,39 @@
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    </head>
+    <body>
+        <h1>成绩管理系统</h1>
+        <h2>成绩列表</h2>
+        <div>
+            {% if infos %}
+            <table class="layui-table">
+                    <colgroup>
+                      <col width="150">
+                      <col width="200">
+                      <col>
+                    </colgroup>
+                    <thead>
+                            <tr>
+                              <th>科目</th>
+                              <th>成绩</th>
+                            </tr> 
+                    </thead>
+            {% for info in infos %}
+            <tr>
+                    <td>{{info.classname}}</td>
+                    <td>{{info.number}}</td>
+                    <td><a href='/change?classname={{info.classname}}'>修改</a></td>
+                    <td><a href='/delete?classname={{info.classname}}'>删除</a></td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            还没有成绩
+            {% endif %}
+
+            <br>
+            <a href="/add">新增科目成绩</a>
+    
+    </body>
+
+</html>

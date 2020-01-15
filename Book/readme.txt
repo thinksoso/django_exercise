@@ -1,0 +1,3 @@
+图书管理系统
+数据库使用sqllite
+用python manage.py runserver运行

@@ -1,0 +1,14 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>请输入成绩信息</h1>
+    <form action="/add" method="POST">
+        {% csrf_token %}
+        <input type="text" name="classname" value="请输入科目">
+        <input type="text" name="number" value="成绩">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
